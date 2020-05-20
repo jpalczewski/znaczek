@@ -15,6 +15,23 @@ func main() {
 				Aliases: []string{"e"},
 				Usage:   "export labels to file",
 				Action:  export,
+				Flags: []cli.Flag{
+					&cli.StringFlag{
+						Name:     "owner",
+						Required: true,
+						Aliases:  []string{"o"},
+					},
+					&cli.StringFlag{
+						Name:     "repository",
+						Required: true,
+						Aliases:  []string{"r"},
+					},
+					&cli.StringFlag{
+						Name:    "output",
+						Aliases: []string{"f"},
+						Value:   "labels.json",
+					},
+				},
 			},
 		},
 		Usage: "Managing github labels have never been easier!",
@@ -24,6 +41,11 @@ func main() {
 				Aliases: []string{"d", "v"},
 				Value:   false,
 				Usage:   "Show further info",
+			},
+			&cli.BoolFlag{
+				Name:    "quiet",
+				Aliases: []string{"q"},
+				Value:   false,
 			},
 		},
 	}
