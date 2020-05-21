@@ -1,4 +1,0 @@
-76021926d826c20336110837aa29ec5cf3994a441070b62e4ab9127d692fef2c  znaczek_v0.0.0-next_Linux_x86_64.tar.gz
-d8d9b812ed680f7a21f132355eeadf94bcf5b75c06a805c6e3c594f8ba54d471  znaczek_v0.0.0-next_Darwin_x86_64.tar.gz
-d9b7ed637516c3415d5dce235811a6d8ad822027b61fbab4d49205e9308878ac  znaczek_v0.0.0-next_Linux_i386.tar.gz
-9a8ba3aa9c764bafebeb4f87d08d5292aa6af1d262e12c1f508c3751cd96d53c  znaczek_v0.0.0-next_Darwin_i386.tar.gz
