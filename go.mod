@@ -4,7 +4,6 @@ go 1.14
 
 require (
 	github.com/PuerkitoBio/goquery v1.5.1 // indirect
-	github.com/google/go-github v17.0.0+incompatible
 	github.com/google/go-github/v31 v31.0.0
 	github.com/joho/godotenv v1.3.0
 	github.com/kyokomi/emoji v2.2.2+incompatible
