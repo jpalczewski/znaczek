@@ -2,7 +2,6 @@ package internal
 
 import (
 	"context"
-	"fmt"
 	"log"
 	"os"
 
@@ -18,8 +17,6 @@ func getClient() (context.Context, *github.Client) {
 	}
 
 	githubToken := os.Getenv("GH_TOKEN")
-
-	fmt.Println("Test", githubToken)
 
 	ctx := context.Background()
 	ts := oauth2.StaticTokenSource(

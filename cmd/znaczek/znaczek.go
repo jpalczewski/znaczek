@@ -37,6 +37,26 @@ func main() {
 					},
 				},
 			},
+			{
+				Name:    "nuke",
+				Action:  internal.Nuke,
+				Usage:   "Delete all label in existing repo",
+				Aliases: []string{"n"},
+				Flags: []cli.Flag{
+					&cli.StringFlag{
+						Name:     "owner",
+						Required: true,
+						Aliases:  []string{"o"},
+						Usage:    "Source repository owner",
+					},
+					&cli.StringFlag{
+						Name:     "repository",
+						Required: true,
+						Aliases:  []string{"r"},
+						Usage:    "Repository name",
+					},
+				},
+			},
 		},
 		Usage: "Managing github labels have never been easier!",
 		Flags: []cli.Flag{
