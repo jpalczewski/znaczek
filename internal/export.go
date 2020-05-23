@@ -7,14 +7,16 @@ import (
 	"os"
 
 	"github.com/kyokomi/emoji"
-	. "github.com/logrusorgru/aurora"
+	"github.com/logrusorgru/aurora"
 	"github.com/urfave/cli/v2"
 )
 
+// Export exports  all labels from specified repo to json file.
 func Export(c *cli.Context) error {
 	fmt.Println("I should export something.")
 	if c.Bool("debug") {
-		emoji.Println(Yellow("But not yet :cowboy_hat_face:"))
+
+		emoji.Println(aurora.Yellow("But not yet :cowboy_hat_face:"))
 	}
 	ctx, client := getClient()
 

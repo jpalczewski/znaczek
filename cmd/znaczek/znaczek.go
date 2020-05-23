@@ -9,6 +9,28 @@ import (
 )
 
 func main() {
+
+	repoDetailsFlags := []cli.Flag{
+		&cli.StringFlag{
+			Name:     "owner",
+			Required: true,
+			Aliases:  []string{"o"},
+			Usage:    "Source repository owner",
+		},
+		&cli.StringFlag{
+			Name:     "repository",
+			Required: true,
+			Aliases:  []string{"r"},
+			Usage:    "Repository name",
+		},
+	}
+	repoAndFileDetailsFlags := append(repoDetailsFlags, &cli.StringFlag{
+		Name:    "file",
+		Aliases: []string{"f"},
+		Value:   "labels.json",
+		Usage:   "Related file name",
+	})
+
 	app := &cli.App{
 		Commands: []*cli.Command{
 			{
@@ -16,46 +38,21 @@ func main() {
 				Aliases: []string{"e"},
 				Usage:   "export labels to file",
 				Action:  internal.Export,
-				Flags: []cli.Flag{
-					&cli.StringFlag{
-						Name:     "owner",
-						Required: true,
-						Aliases:  []string{"o"},
-						Usage:    "Source repository owner",
-					},
-					&cli.StringFlag{
-						Name:     "repository",
-						Required: true,
-						Aliases:  []string{"r"},
-						Usage:    "Repository name",
-					},
-					&cli.StringFlag{
-						Name:    "output",
-						Aliases: []string{"f"},
-						Value:   "labels.json",
-						Usage:   "Output file name",
-					},
-				},
+				Flags:   repoAndFileDetailsFlags,
 			},
 			{
 				Name:    "nuke",
 				Action:  internal.Nuke,
 				Usage:   "Delete all label in existing repo",
 				Aliases: []string{"n"},
-				Flags: []cli.Flag{
-					&cli.StringFlag{
-						Name:     "owner",
-						Required: true,
-						Aliases:  []string{"o"},
-						Usage:    "Source repository owner",
-					},
-					&cli.StringFlag{
-						Name:     "repository",
-						Required: true,
-						Aliases:  []string{"r"},
-						Usage:    "Repository name",
-					},
-				},
+				Flags:   repoDetailsFlags,
+			},
+			{
+				Name:    "apply",
+				Action:  internal.Apply,
+				Usage:   "Apply json file to repo",
+				Aliases: []string{"a"},
+				Flags:   repoAndFileDetailsFlags,
 			},
 		},
 		Usage: "Managing github labels have never been easier!",
