@@ -9,6 +9,7 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
+// Apply loads content of specified file and applies it to repository.
 func Apply(c *cli.Context) error {
 	ctx, client := getClient()
 

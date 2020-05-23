@@ -4,6 +4,7 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
+//Nuke removes all labels from repository
 func Nuke(c *cli.Context) error {
 	ctx, client := getClient()
 
