@@ -1,0 +1,15 @@
+language: go
+go:
+- master
+
+cache:
+    directories:
+      - $HOME/.cache/go-build
+      - $HOME/gopath/pkg/mod
+
+before_install: make setup
+
+notifications:
+    email: false
+
+script: make test
