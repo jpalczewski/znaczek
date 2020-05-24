@@ -15,8 +15,7 @@ clean:
 .PHONY: setup
 setup:
 ## setup: setup go modules
-	@go mod init \
-		&& go mod tidy \
+	@go mod tidy \
 		&& go mod vendor
 
 .PHONY: test
