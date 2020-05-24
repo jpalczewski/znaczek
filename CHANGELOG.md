@@ -1,4 +1,14 @@
 
+<a name="v0.1.5"></a>
+## [v0.1.5](https://github.com/jpalczewski/znaczek/compare/v0.1.4...v0.1.5)
+
+> 2020-05-24
+
+### Fix
+
+* fix scripted changelog generation
+
+
 <a name="v0.1.4"></a>
 ## [v0.1.4](https://github.com/jpalczewski/znaczek/compare/v0.1.3...v0.1.4)
 
