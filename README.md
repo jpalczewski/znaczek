@@ -2,6 +2,7 @@
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/jpalczewski/znaczek)](https://goreportcard.com/report/github.com/jpalczewski/znaczek)
 [![Maintainability](https://api.codeclimate.com/v1/badges/cbe4df9ac2272d3b03db/maintainability)](https://codeclimate.com/github/jpalczewski/znaczek/maintainability)
+[![Build Status](https://travis-ci.com/jpalczewski/znaczek.svg?branch=master)](https://travis-ci.com/jpalczewski/znaczek)
 
 Manage github repo labels with a breeze.
 
