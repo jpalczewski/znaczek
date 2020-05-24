@@ -7,6 +7,7 @@ fi
 
 git-chglog --next-tag $1 -o CHANGELOG.md
 
+git add -u 
 git commit -am "release $1"
 
 git tag $1
