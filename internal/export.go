@@ -35,7 +35,7 @@ func Export(c *cli.Context) error {
 		fmt.Println(string(out))
 	}
 
-	handle, _ := os.Create(c.String("output"))
+	handle, _ := os.Create(c.String("file"))
 	handle.WriteString(string(out))
 	// for i, x := range ret {
 	// 	lab := *label.NewLabel(x)

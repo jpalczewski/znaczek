@@ -3,27 +3,32 @@ package main
 import (
 	"log"
 	"os"
+	"path/filepath"
 
+	"github.com/adrg/xdg"
 	"github.com/jpalczewski/znaczek/internal"
+	"github.com/kkyr/fig"
 	"github.com/urfave/cli/v2"
 )
 
 func main() {
 
-	repoDetailsFlags := []cli.Flag{
-		&cli.StringFlag{
-			Name:     "owner",
-			Required: true,
-			Aliases:  []string{"o"},
-			Usage:    "Source repository owner",
-		},
-		&cli.StringFlag{
-			Name:     "repository",
-			Required: true,
-			Aliases:  []string{"r"},
-			Usage:    "Repository name",
-		},
+	var cfg internal.Config
+
+	path, err := xdg.ConfigFile("znaczek/settings.yaml")
+	dir, file := filepath.Split(path)
+
+	if err != nil {
+		log.Fatal(err, path)
 	}
+
+	err = fig.Load(&cfg, fig.File(file), fig.Dirs(dir))
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	repoDetailsFlags := CreateRepoFlags(cfg.Defaults.Owner)
+
 	repoAndFileDetailsFlags := append(repoDetailsFlags, &cli.StringFlag{
 		Name:    "file",
 		Aliases: []string{"f"},
@@ -72,7 +77,7 @@ func main() {
 		},
 	}
 
-	err := app.Run(os.Args)
+	err = app.Run(os.Args)
 	if err != nil {
 		log.Fatal(err)
 	}
