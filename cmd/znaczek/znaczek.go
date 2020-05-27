@@ -27,7 +27,7 @@ func main() {
 		log.Fatalln(err)
 	}
 
-	repoDetailsFlags := CreateRepoFlags(cfg.Defaults.Owner)
+	repoDetailsFlags := createRepoFlags(cfg.Defaults.Owner)
 
 	repoAndFileDetailsFlags := append(repoDetailsFlags, &cli.StringFlag{
 		Name:    "file",
