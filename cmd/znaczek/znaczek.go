@@ -27,7 +27,7 @@ func main() {
 		log.Fatalln(err)
 	}
 
-	repoDetailsFlags := createRepoFlags(cfg.Defaults.Owner)
+	repoDetailsFlags := internal.CreateRepoFlags(cfg.Defaults.Owner)
 
 	repoAndFileDetailsFlags := append(repoDetailsFlags, &cli.StringFlag{
 		Name:    "file",
@@ -63,13 +63,13 @@ func main() {
 		Usage: "Managing github labels have never been easier!",
 		Flags: []cli.Flag{
 			&cli.BoolFlag{
-				Name:    "debug",
+				Name:    internal.Debug,
 				Aliases: []string{"d", "v"},
 				Value:   false,
 				Usage:   "Show further info",
 			},
 			&cli.BoolFlag{
-				Name:    "quiet",
+				Name:    internal.Quiet,
 				Aliases: []string{"q"},
 				Value:   false,
 				Usage:   "Hide unnecesary info",

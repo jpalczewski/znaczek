@@ -31,11 +31,11 @@ func Export(c *cli.Context) error {
 	}
 	out, _ := json.MarshalIndent(exportLabels, "  ", "    ")
 
-	if !c.Bool("quiet") {
+	if !c.Bool(Quiet) {
 		fmt.Println(string(out))
 	}
 
-	handle, _ := os.Create(c.String("file"))
+	handle, _ := os.Create(c.String(File))
 	handle.WriteString(string(out))
 	// for i, x := range ret {
 	// 	lab := *label.NewLabel(x)
