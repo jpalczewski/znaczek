@@ -7,7 +7,7 @@ cache:
       - $HOME/.cache/go-build
       - $HOME/gopath/pkg/mod
 
-before_install: make setup
+before_install: make setup && make build
 
 notifications:
     email: false

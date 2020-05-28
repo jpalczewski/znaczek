@@ -13,7 +13,7 @@ import (
 func Apply(c *cli.Context) error {
 	ctx, client := getClient()
 
-	rawFile, error := ioutil.ReadFile(c.String("file"))
+	rawFile, error := ioutil.ReadFile(c.String(File))
 
 	if error != nil {
 		log.Fatal(error)
@@ -28,7 +28,7 @@ func Apply(c *cli.Context) error {
 
 	for _, x := range labels {
 		label := github.Label{Name: &x.Name, Description: &x.Description, Color: &x.Color}
-		client.Issues.CreateLabel(ctx, c.String("owner"), c.String("repository"), &label)
+		client.Issues.CreateLabel(ctx, c.String(Owner), c.String(Repository), &label)
 
 	}
 

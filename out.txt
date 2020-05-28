@@ -1,0 +1,87 @@
+[
+      {
+          "name": "1️⃣good first issue",
+          "description": "Good for newcomers",
+          "color": "7057ff"
+      },
+      {
+          "name": "♻️ refactor friday",
+          "description": "All issues that is absolutely not important.",
+          "color": "0052cc"
+      },
+      {
+          "name": "⛑️needs triage",
+          "description": "don't have issues or assignee?",
+          "color": "bcf26d"
+      },
+      {
+          "name": "❌invalid",
+          "description": "This doesn't seem right",
+          "color": "e4e669"
+      },
+      {
+          "name": "❓question",
+          "description": "Further information is requested",
+          "color": "d876e3"
+      },
+      {
+          "name": "🆘help wanted",
+          "description": "Extra attention is needed",
+          "color": "008672"
+      },
+      {
+          "name": "🐛bug",
+          "description": "Something isn't working",
+          "color": "d73a4a"
+      },
+      {
+          "name": "💡ideas",
+          "description": "Things worth checking out",
+          "color": "8570d1"
+      },
+      {
+          "name": "📄frontend",
+          "description": "Frontend-related issues",
+          "color": "051472"
+      },
+      {
+          "name": "📈enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+      },
+      {
+          "name": "📖documentation",
+          "description": "Improvements or additions to documentation",
+          "color": "0075ca"
+      },
+      {
+          "name": "🔁duplicate",
+          "description": "This issue or pull request already exists",
+          "color": "cfd3d7"
+      },
+      {
+          "name": "🔒security",
+          "description": "Potential problems and pitfals related to security",
+          "color": "ccf6ff"
+      },
+      {
+          "name": "🔙backend",
+          "description": "backend-related things",
+          "color": "aff285"
+      },
+      {
+          "name": "🔨devops",
+          "description": "Issues related with deployment - and improving that process",
+          "color": "c2e0c6"
+      },
+      {
+          "name": "🗣️ discussion",
+          "description": "Things where discussion is necessary.",
+          "color": "d6f9a2"
+      },
+      {
+          "name": "😢wontfix",
+          "description": "This will not be worked on",
+          "color": "ffffff"
+      }
+  ]

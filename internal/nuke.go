@@ -8,10 +8,10 @@ import (
 func Nuke(c *cli.Context) error {
 	ctx, client := getClient()
 
-	labels, _, _ := client.Issues.ListLabels(ctx, c.String("owner"), c.String("repository"), nil)
+	labels, _, _ := client.Issues.ListLabels(ctx, c.String(Owner), c.String(Repository), nil)
 
 	for _, x := range labels {
-		client.Issues.DeleteLabel(ctx, c.String("owner"), c.String("repository"), *x.Name)
+		client.Issues.DeleteLabel(ctx, c.String(Owner), c.String(Repository), *x.Name)
 
 	}
 
