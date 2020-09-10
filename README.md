@@ -43,3 +43,4 @@ App make use of env variable `GH_TOKEN` with repo scope in order to manage label
 
 - First idea came out from <https://douglascayers.com/2019/08/01/how-to-export-and-import-github-issue-labels-between-projects/> - My googling also ended up in nothing useful, so there that simple tool came in.
 - Makefile is inspired by <https://danishpraka.sh/2019/12/07/using-makefiles-for-go.html>
+- https://stackoverflow.com/questions/57745017/zap-log-framework-go-initialize-log-once-and-reuse-from-other-go-file-solved

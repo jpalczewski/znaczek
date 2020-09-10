@@ -16,6 +16,7 @@ func Apply(c *cli.Context) error {
 	rawFile, error := ioutil.ReadFile(c.String(File))
 
 	if error != nil {
+		log.Println("apply")
 		log.Fatal(error)
 	}
 

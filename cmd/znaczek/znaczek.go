@@ -9,28 +9,29 @@ import (
 	"github.com/jpalczewski/znaczek/internal"
 	"github.com/kkyr/fig"
 	"github.com/urfave/cli/v2"
+	"go.uber.org/zap"
 )
 
 func main() {
 
 	var cfg internal.Config
-
+	var debugLevel bool
 	path, err := xdg.ConfigFile("znaczek/settings.yaml")
 	dir, file := filepath.Split(path)
 
 	if err != nil {
-		log.Fatal(err, path)
+		log.Println(err, path)
 	}
 
 	err = fig.Load(&cfg, fig.File(file), fig.Dirs(dir))
 	if err != nil {
-		log.Fatalln(err)
+		log.Println(err)
 	}
 
 	repoDetailsFlags := internal.CreateRepoFlags(cfg.Defaults.Owner)
 
 	repoAndFileDetailsFlags := append(repoDetailsFlags, &cli.StringFlag{
-		Name:    "file",
+		Name:    internal.File,
 		Aliases: []string{"f"},
 		Value:   "labels.json",
 		Usage:   "Related file name",
@@ -63,10 +64,11 @@ func main() {
 		Usage: "Managing github labels have never been easier!",
 		Flags: []cli.Flag{
 			&cli.BoolFlag{
-				Name:    internal.Debug,
-				Aliases: []string{"d", "v"},
-				Value:   false,
-				Usage:   "Show further info",
+				Name:        internal.Debug,
+				Aliases:     []string{"d", "v"},
+				Value:       false,
+				Usage:       "Show further info",
+				Destination: &debugLevel,
 			},
 			&cli.BoolFlag{
 				Name:    internal.Quiet,
@@ -76,8 +78,10 @@ func main() {
 			},
 		},
 	}
-
 	err = app.Run(os.Args)
+
+	logger := internal.CreateLogger(debugLevel)
+	zap.ReplaceGlobals(logger.Desugar())
 	if err != nil {
 		log.Fatal(err)
 	}
